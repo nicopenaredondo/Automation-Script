@@ -38,7 +38,10 @@ sudo a2enmod rewrite
 
 echo "___Setting document root to public directory___"
 sudo rm -rf /var/www
-sudo ln -fs /vagrant/public /var/www #You can change "/vagrant/public" if you want to..
+#You can change "/vagrant/public" if you want to..
+#First Parameter  : Host Directory (E.g C:/dev/vagrant/public)
+#Second Parameter : Guest Directory (E.g /var/www)
+sudo ln -fs /vagrant/public /var/www
 
 echo "___I'm gonna turn on the error reporting of PHP, No you're not a pro bitch___"
 sed -i "s/error_reporting = .*/error_reporting = E_ALL/" /etc/php5/apache2/php.ini
